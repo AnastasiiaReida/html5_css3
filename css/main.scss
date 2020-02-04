@@ -1,0 +1,393 @@
+$fontButton: rgb(255, 255, 255);
+$fontSize:1.5em;
+$colorBut1: rgb(219, 162, 38);
+$colorBut2: rgb(68, 153, 240);
+$colorBut3: rgb(104, 222, 27);
+$bodyColor: rgb(240, 240, 240);
+$mainColor: rgb(88, 88, 88);
+$count:0;
+
+@import 'mixin';
+
+* { box-sizing: border-box; }
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+#conteiner{
+    background-color: $bodyColor;
+    display: grid;
+    grid-template-areas: "nav"
+                         "header"
+                         "main"
+                         "section"
+                         "footer";
+}
+
+#conteiner>header{
+    grid-area: header;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    padding:0px 40px;
+    article{
+        display: grid;
+        grid-gap: 30px;
+        padding: 40px 0;
+        text-transform: uppercase;
+        color: $mainColor;
+        font-weight: bolder;
+        p{
+            margin: 0px;
+        }
+    }
+    img{
+        width: 100%;
+        border-radius: 50%;
+    }
+}
+h3{
+    font-size:$fontSize*1.4 ;
+    margin: 0px;
+    text-align: center;
+    letter-spacing:0px;
+    word-spacing: 0px;
+    text-transform: uppercase;
+    color:$mainColor;
+}
+nav{
+    grid-area: nav;
+    background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0.5)),  url("/img/studio.jpg");
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100vh;
+    color:$fontButton;
+    display: grid;
+    grid-template:repeat(4, 1fr) /1fr 3fr 1fr;
+    h1{
+        margin: 0px;
+        margin-bottom: 30px;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        text-transform: uppercase;
+        font-size:$fontSize*3;
+        text-align: center;
+    }
+    ul {
+        margin: 0px;
+        grid-column: 2/3;
+        grid-row: 3/4;
+        list-style: none;
+        text-align: left;
+        padding-left: 0px;
+        display: grid;
+        grid-gap: 10px;
+        
+        li{
+            opacity: 0.7;
+        }
+        li:hover {
+            opacity: 1;
+        }
+        :nth-child(1){
+            @include buttonColor($colorBut1,$colorBut1, $fontButton); 
+        }
+        :nth-child(2){
+            @include buttonColor($colorBut2,$colorBut2, $fontButton);
+        }
+        :nth-child(3){
+            @include buttonColor($colorBut3,$colorBut3, $fontButton);
+        }
+    }
+}
+
+main{
+    padding:0px 40px;
+    grid-area: main;
+    display: grid;
+    grid-template-rows:auto repeat(8, 175px);
+    grid-gap: 10px;
+
+    figure{
+        margin: 0px;
+        opacity: 0.5;
+    //выравниваем что бы картинка входила по ширине а по высоте обрезалась относительно центра
+        display: flex;
+        align-items: center;
+        align-content: center; 
+        justify-content: center; 
+        overflow: hidden;
+    // 
+        position: relative;//это для надписи поверх картинки  
+        img{
+            width: 100%;
+        }
+        figcaption{
+            color:$fontButton;
+            font-size:$fontSize*1.2;
+            position: absolute;//это для надписи поверх картинки
+            // text-align: center;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);
+        }
+    }    
+    figure:hover{
+        opacity: 1;
+        transition: opacity 2s;
+        figcaption{
+            color: $colorBut2;
+            transition: color 2s;
+        }
+    }
+    
+}
+
+section{
+    grid-area: section;
+    padding:30px 40px;
+    color: $mainColor;
+    display:grid;
+    font-size:$fontSize;
+    grid-gap: 20px;
+    h3{
+        font-size:$fontSize*0.9;
+    }
+    article{
+        background-color: darken($bodyColor, 7%);
+        header{
+            text-align: center;
+            font-weight: bolder;
+            padding-bottom: 10px;
+        }
+        aside{
+            display: none;
+        }
+        .image-holder{
+            max-height: 225px;
+            display: flex;
+            align-items: center;
+            align-content: center; 
+            justify-content: center; 
+            overflow: hidden;
+            
+        }
+        img{
+            width: 100%; 
+            transition: transform .7s;
+        }
+        video{
+            width: 100%;
+        }
+        iframe{
+            width: 100%;
+        }
+        
+    }
+    article:hover{
+        background-color: darken($bodyColor, 12%);
+        img{
+            transform: scale(1.2);
+        }
+    }
+    >div{
+        @include buttonColor($colorBut3, $mainColor, $fontButton);
+        width:170px;
+        height: 45px;
+        justify-self: center;
+    }
+}
+
+footer{
+    grid-area: footer;
+    background-color: $mainColor;
+    h3{
+        color:$fontButton;
+        margin:15px;
+    }
+    form{
+        margin: 0px 25px;
+        padding: 50px;
+        background-color: lighten($mainColor, 20%);
+        display: grid;
+        grid-template: repeat(5, 35px)/1fr;
+        grid-gap: 35px;
+        input{
+            background-color: lighten($mainColor, 40%);
+            border: 0px;
+            padding-left: 10px;
+            font-style: italic;
+            font-weight: bold;
+        }
+        button{
+            p{
+                text-align: left;
+                margin:0px;
+                font-weight: bold;
+            }
+            
+            font-style: italic;
+            border: 0px;
+            @include buttonColor(lighten($mainColor, 40%), $colorBut2, black);
+        }
+    }
+    ul{
+        list-style: none;
+        padding: 0px;
+        margin: 10px 10px 30px;
+        text-align: center;
+        li{
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+}
+@media(min-width: 576px) and (max-width: 768px){
+    #conteiner>header{
+        grid-template-columns: repeat(4, 1fr);
+        padding:0px;
+        article{
+            grid-column: 1/-1;
+            padding:0px 40px;
+        }
+        img{
+            grid-column: 2/-2;
+            padding:20px 0px;
+        }
+    }
+    main{
+        grid-template:auto repeat(4, 175px)/repeat(2, 1fr);
+        h3{
+            grid-column: 1/-1;
+        }
+        //как сделать что бы картинка если высота большая то по weight 100% и наоборот?(оч актуально для 5 картинки)
+        img{
+            // @if height < 175px{
+            //  height: 100%;
+            // }
+            height: 100%;
+        }
+    }
+    section{
+        grid-template:auto repeat(3, 50vh) 30vh auto/ repeat(2, 1fr);
+        #video,#map, h3, #button{
+            grid-column: 1/-1;
+        }
+        :nth-child(2), :nth-child(3){
+            header{
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+        }
+        video, iframe{
+            height: 85%;
+        }
+        :nth-child(6), :nth-child(7){
+            grid-row: 5/6;
+            .image-holder{
+                height: 85%;
+            }
+        }
+    }
+    
+
+}
+
+@media(min-width: 769px){
+    nav{
+        grid-template: 2fr 1fr 1fr 2fr/1fr 2fr 1fr;
+        h1{
+            grid-row: 2/3; 
+            grid-column: 2/-2;
+        }
+        ul {
+            grid-row: 3/4;
+            grid-column: 2/-2;
+            grid-template-columns: repeat(2, 2fr 1fr) 2fr;
+            grid-gap: 0px;
+            align-content: center;
+        } 
+        @each $i in 1, 3, 5 {
+            $count: $count+1;
+            ul :nth-child(#{$count}){
+                grid-column: #{$i}/#{$i + 1};
+                padding: 3px;
+            }
+        }
+    } 
+    #conteiner>header{
+        grid-template: 1fr / repeat(2, 1fr);
+        padding:0px 20px;
+        article{
+            padding-top: 30px;
+            border-right: 1px solid black;
+            display: block;
+            
+            p{
+                padding: 10px 40px;
+            }
+        }
+        img{
+            padding:10px 40px 10px 20px;
+
+        }
+    }
+    h3{
+        text-align: left;
+        padding:30px 40px;
+    }
+    main{
+        padding:0px 20px;
+        grid-template:auto repeat(5, 175px) / repeat(3, 1fr);
+        grid-gap: 5px;
+        :first-child, :last-child{
+            grid-column: 1/-1;
+        }
+        :nth-child(2),:nth-child(5){
+            grid-column: span 2;
+        }
+        :nth-child(6){
+            grid-area: span 2/span 2;
+        }
+    }
+    section{
+        padding:0px 20px 30px;
+        grid-template: auto repeat(2, 1fr) auto/ repeat(4, 1fr);
+        grid-gap: 10px;
+        :first-child, :last-child{
+            grid-column: 1/-1;
+        }
+        #video, #map{
+            grid-column: span 2;
+        }
+        
+        video, iframe, :nth-child(6) .image-holder{
+            max-height: 160px;
+        }
+        article{
+            header{
+                margin-top: 10px;
+            }
+            aside{
+                display: block;
+            }
+        }
+        >div{
+            margin-top: 20px;
+        }
+    }
+    footer{
+        h3{
+            text-align: center;
+        }
+        form{
+            grid-template: 35px / repeat(5, minmax(120px, 300px));
+            grid-gap: 10px;
+            padding: 30px;
+        }
+    }
+}

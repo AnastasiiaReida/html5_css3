@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anna Photographer</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="conteiner">
+        <header>
+            <article>
+                <header>
+                    <h3><a name="about"></a>Anna<br/>Photographer</h3>
+                </header>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste est asperiores, delectus maxime sed
+                    quis?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste voluptates dolorum ipsam doloremque
+                    fuga
+                    culpa mollitia dolore veritatis fugiat error.
+                </p>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis doloribus ratione nisi delectus
+                    quisquam
+                    consectetur consequatur dignissimos et?
+                </p>
+            </article>
+            <img src="/img/myphoto.jpg" alt="myphoto">
+        </header>
+        <!-- почему то не работают якоря -->
+        <nav>
+            <h1>photo shooting</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li> <a href="#gallery"> Gallery </a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+        <main>
+           <h3><a name="gallery"></a>Gallery</h3>
+            <figure>
+                <img src="/img/11.jpg" alt="lake">
+                <figcaption>hello item</figcaption>
+            </figure>
+            <figure>
+                <img src="/img/22.jpg" alt="bear">
+                <figcaption>hello item</figcaption>
+            </figure>
+            <figure>
+                <img src="/img/33.jpg" alt="trees">
+                <figcaption>hello item</figcaption>
+            </figure>
+            <figure>
+                <img src="/img/44.jpg" alt="sunflower">
+                <figcaption>hello item</figcaption>
+            </figure>
+            <figure>
+                <img src="/img/55.jpg" alt="embrace">
+                <figcaption>hello item</figcaption>
+            </figure>
+            <figure>
+                <img src="/img/66.jpg" alt="marriage">
+                <figcaption>hello item</figcaption>
+            </figure>
+            <figure>
+                <img src="/img/77.jpg" alt="bride">
+                <figcaption>hello item</figcaption>
+            </figure>
+            <figure>
+                <img src="/img/88.jpg" alt="canyon">
+                <figcaption>hello item</figcaption>
+            </figure>
+        </main>
+        <section>
+            <h3><a name="blog"></a>Are you ready to read my blog?</h3>
+            <article>
+                <div class="image-holder">
+                    <img src="/img/11.jpg" alt="lake">
+                </div>
+                <header>Blog info text</header>
+                <aside>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae.</aside>
+            </article>
+            <article>
+                <div class="image-holder">
+                    <img src="/img/22.jpg" alt="bear">
+                </div>
+                <header>Blog info text</header>
+                <aside>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae.</aside>
+            </article>
+            <article id="video">
+                <video controls>
+                    <source src="/video/7 Powerful Photography Tips for Amazing Photos.mp4">
+                    Ваш браузер не поддерживает видео
+                </video>
+                <header>Blog info video</header>
+                <aside>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae.</aside>
+            </article>
+            <article id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.988739969043!2d30.50015031515421!3d50.44131039590525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef123e6ad3f%3A0x2168747105ab3578!2sTsern%20-%20Tsentr%20Ekolohiyi%20Ta%20Rozvytku%20Novykh%20Tekhnolohiy!5e0!3m2!1sru!2sua!4v1578580308142!5m2!1sru!2sua" frameborder="0" style="border:0;" allowfullscreen="">
+                </iframe>
+                <header>Blog info map</header>
+                <aside>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae.</aside>
+            </article>
+            <article>
+                <div class="image-holder">
+                    <img src="/img/55.jpg" alt="embrace">
+                </div>
+                <header>Blog info text</header>
+                <aside>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae.</aside>
+            </article>
+            <article>
+                <div class="image-holder">
+                    <img src="/img/66.jpg" alt="marriage">
+                </div>
+                <header>Blog info text</header>
+                <aside>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae.</aside>
+            </article>
+            <div id="button">
+                <a href="#">View blog</a>
+            </div>
+        </section>
+        <footer>
+            <h3>photo shooting</h3>
+            <form>
+                <input type="text" placeholder="your name" name="firstName">
+                <input type="password" placeholder="your password" name="password">
+                <input type="tel" placeholder="your tel" name="tel">
+                <input type="email" placeholder="your email" name="email">
+                <button type="submit"><p>me!</p></button>
+                <div class="error"></div>
+            </form>
+            <ul class="socialIcons">
+                <li><a href="#"><img src="/img/facebook.png" alt="facebook"></a></li>
+                <li><a href="#"><img src="/img/instagram.png" alt="instagram"></a></li>
+                <li><a href="#"><img src="/img/telegram.png" alt="telegram"></a></li>
+                <li><a href="#"><img src="/img/twitter.png" alt="twitter"></a></li>
+            </ul>
+
+        </footer>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
